@@ -1,0 +1,92 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
+    }
+}
+plugins {
+    id 'java'
+    id "com.jfrog.bintray" version "1.7.3"
+    id "maven-publish"
+}
+group 'com.github.abhilash.MathOps_gradle'
+version '1.0'
+/*sourceCompatibility = 1.8*/
+repositories {
+    mavenLocal()
+    jcenter()
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+javadoc.failOnError = false
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "rep"
+        }
+    }
+    developers {
+        developer {
+            id "abhilashp"
+            name "abhilashpn"
+            email "abhiputhumana@gmail.com"
+        }
+    }
+    scm {
+        url "https://github.com/Abhilashpn/buildrepo.git"
+    }
+}
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            groupId 'com.github.abhilash'
+            artifactId 'MathOps_gradle'
+            version '1.1'
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'library')
+                root.appendNode('name', 'MathOps_gradle')
+                root.appendNode('url', 'https://github.com/Abhilashpn/buildrepo.git')
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+bintray {
+    user = System.getProperty('bintray.user')
+    key = System.getProperty('bintray.key')
+    publications = ['MyPublication']
+    pkg {
+        repo = 'buildrepo'
+        name = 'MathOpsGradle'
+        userOrg = 'abhilashp'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/Abhilashpn/buildrepo.git'
+        version {
+            name = '1.0'
+            desc = '1.0'
+            released = new Date()
+        }
+    }
+}
