@@ -78,7 +78,7 @@ bintray {
     key = System.getProperty('bintray.key')
     publications = ['MyPublication']
     pkg {
-        repo = 'buildrepo'
+        repo = 'GPGSIGN'
         name = 'MathOpsGradle'
         userOrg = 'abhilashp'
         licenses = ['Apache-2.0']
