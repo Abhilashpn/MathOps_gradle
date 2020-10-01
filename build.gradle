@@ -13,7 +13,7 @@ plugins {
     id "maven-publish"
 }
 group 'com.github.abhilash.MathOps_gradle'
-version '37.0'
+version '2.0'
 /*sourceCompatibility = 1.8*/
 repositories {
     mavenLocal()
@@ -84,8 +84,8 @@ bintray {
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/Abhilashpn/buildrepo.git'
         version {
-            name = '37.0'
-            desc = '37.0'
+            name = '2.0'
+            desc = '2.0'
             released = new Date()
         }
     }
