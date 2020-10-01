@@ -74,11 +74,11 @@ publishing {
     }
 }
 bintray {
-    user = project.hasProperty('bintrayUser') ? project.getProperty('bintrayUser') : System.getenv('BINTRAY_USER')
-    key = project.hasProperty('bintrayApiKey') ? project.getProperty('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    user = System.getProperty('bintray.user')
+    key = System.getProperty('bintray.key')
     publications = ['MyPublication']
     pkg {
-        repo = 'GPGSIGN'
+        repo = 'maven'
         name = 'MathOpsGradle'
         userOrg = 'abhilashp'
         licenses = ['Apache-2.0']
