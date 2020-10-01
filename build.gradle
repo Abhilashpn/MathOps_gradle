@@ -62,7 +62,7 @@ publishing {
             artifact javadocJar
             groupId 'com.github.abhilash'
             artifactId 'MathOps_gradle'
-            version '37.0'
+            version '5.0'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'library')
