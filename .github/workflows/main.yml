@@ -19,4 +19,4 @@ jobs:
       env:
         bintrayUser: abhilashp
         bintrayApiKey: 9cab1c1736f81021e9ff34522d0ff6480533fb16
-      run: ./gradlew bintrayUpload
+      run: ./gradlew bintrayUpload docs
