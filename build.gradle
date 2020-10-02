@@ -88,7 +88,7 @@ bintray {
             desc = '7.0'
             released = new Date()
             gpg {
-                sign = false
+                sign = true
             }
         }
     }
