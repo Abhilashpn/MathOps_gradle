@@ -62,7 +62,7 @@ publishing {
             artifact javadocJar
             groupId 'com.github.abhilash'
             artifactId 'MathOps_gradle'
-            version '8.0'
+            version '9.0'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'library')
@@ -84,8 +84,8 @@ bintray {
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/Abhilashpn/buildrepo.git'
         version {
-            name = '8.0'
-            desc = '8.0'
+            name = '9.0'
+            desc = '9.0'
             released = new Date()
             gpg {
                 sign = true
