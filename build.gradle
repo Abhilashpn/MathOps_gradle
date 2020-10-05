@@ -589,6 +589,22 @@ ext {
                     name   : 'micronaut-acme'
             ],
     ]
+    dependencyVersion = { String name ->
+        def dep = dependencyVersions[name]
+        if (dep == null) {
+            throw new IllegalArgumentException("No core dependency defined for name: $name")
+        }
+        return "$dep.group:$dep.name:$dep.version".toString()
+    }
+    dependencyModuleVersion = { String name, String module ->
+        def dep = dependencyVersions[name] ?: bomVersions[name]
+        if (dep == null) {
+            throw new IllegalArgumentException("No core or BOM dependency defined for name: $name")
+        }
+        return "$dep.group:$module:$dep.version".toString()
+    }
+
+}
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
