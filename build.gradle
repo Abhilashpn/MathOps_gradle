@@ -19,13 +19,6 @@ plugins {
     id "com.jfrog.bintray" version "1.7.3"
     id "maven-publish"
 }
-group 'com.github.abhilash.MathOps_gradle'
-version '5.0'
-/*sourceCompatibility = 1.8*/
-repositories {
-    mavenLocal()
-    jcenter()
-}
 
 ext {
     bomVersions = [
