@@ -21,11 +21,6 @@ plugins {
 ext {
     bomVersions = [
             // Micronaut
-            'micronaut.views': [
-                    group: 'io.micronaut.views',
-                    name: 'micronaut-views-bom',
-                    version: micronautViewsVersion
-            ],
             'micronaut.groovy': [
                     group: 'io.micronaut.groovy',
                     name: 'micronaut-groovy-bom',
