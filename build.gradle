@@ -12,13 +12,13 @@ buildscript {
     }
 }
 
-apply plugin: 'org.aim42.htmlSanityCheck'
-
 plugins {
     id 'java'
     id "com.jfrog.bintray" version "1.7.3"
     id "maven-publish"
 }
+
+apply plugin: 'org.aim42.htmlSanityCheck'
 
 ext {
     bomVersions = [
