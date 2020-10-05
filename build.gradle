@@ -21,22 +21,6 @@ plugins {
 ext {
     bomVersions = [
             // Micronaut
-            'micronaut.groovy': [
-                    group: 'io.micronaut.groovy',
-                    name: 'micronaut-groovy-bom',
-                    version: micronautGroovyVersion
-            ],
-            'micronaut.test': [
-                    group: 'io.micronaut.test',
-                    name: 'micronaut-test-bom',
-                    version: micronautTestVersion
-            ],
-            'micronaut.data': [
-                    group: 'io.micronaut.data',
-                    name: 'micronaut-data-bom',
-                    version: micronautDataVersion
-            ],
-
             //Third-party
             'netty': [
                     group: 'io.netty',
