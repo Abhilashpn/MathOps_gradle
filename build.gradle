@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
+        classpath "gradle.plugin.org.aim42:htmlSanityCheck:$htmlSanityCheckVersion"
         classpath 'javax.xml.bind:jaxb-api:2.3.1'
     }
 }
@@ -17,6 +18,8 @@ plugins {
     id "com.jfrog.bintray" version "1.7.3"
     id "maven-publish"
 }
+
+apply plugin: 'org.aim42.htmlSanityCheck'
 
 ext {
     bomVersions = [
