@@ -22,6 +22,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.springframework.security', name: 'spring-security-cas', version: '5.4.1'
+    compile group: 'io.opentelemetry', name: 'opentelemetry-sdk', version: '0.9.1'
 }
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
@@ -63,7 +64,7 @@ publishing {
             artifact javadocJar
             groupId 'com.github.abhilash'
             artifactId 'MathOps_gradle'
-            version '9.0'
+            version '11.0'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'library')
@@ -85,8 +86,8 @@ bintray {
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/Abhilashpn/buildrepo.git'
         version {
-            name = '9.0'
-            desc = '9.0'
+            name = '11.0'
+            desc = '11.0'
             released = new Date()
             gpg {
                 sign = true
