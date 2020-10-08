@@ -6,13 +6,11 @@ buildscript {
     dependencies {
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
         classpath "io.micronaut.build:micronaut-gradle-plugins:2.0.11"
-        classpath "gradle.plugin.org.aim42:htmlSanityCheck:$htmlSanityCheckVersion"
         classpath 'javax.xml.bind:jaxb-api:2.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
-apply plugin: 'org.aim42.htmlSanityCheck'
 
 repositories {
     maven { url "https://repo.grails.org/grails/core" }
@@ -812,8 +810,6 @@ allprojects {
         }
     }
 }
-
-docs.finalizedBy(htmlSanityCheck)
 
 dependencyUpdates.resolutionStrategy {
     componentSelection { rules ->
