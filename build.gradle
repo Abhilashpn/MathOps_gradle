@@ -813,11 +813,6 @@ allprojects {
     }
 }
 
-htmlSanityCheck {
-    sourceDir = new File("${rootProject.buildDir}/docs/")
-    sourceDocuments = fileTree(sourceDir) {
-        include "index.html"
-    }
 }
 docs.finalizedBy(htmlSanityCheck)
 
