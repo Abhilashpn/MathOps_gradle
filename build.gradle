@@ -813,7 +813,6 @@ allprojects {
     }
 }
 
-}
 docs.finalizedBy(htmlSanityCheck)
 
 dependencyUpdates.resolutionStrategy {
